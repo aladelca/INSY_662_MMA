@@ -401,8 +401,7 @@ df_final_recom = predict(data, original_data, vect, model, model_clustering, esc
 recom = get_recommendation("Je suis heureux et je vais danser", df_final_recom)
 print(recom)
 
-filename = 'final_model.sav'
-pickle.dump(model_rf, open(filename, 'wb'))
+
 ### Exporting models as pickles for predict part
 '''
 
