@@ -10,7 +10,7 @@ def predict():
     argument = data['argument']
 
     # Ejecuta el script predict.py con el argumento proporcionado
-    result = subprocess.run(['python', 'predict.py', argument], capture_output=True, text=True)
+    result = subprocess.run(['python3', 'predict.py', argument], capture_output=True, text=True)
 
     if result.returncode == 0:
         # Lee el archivo JSON generado por el script

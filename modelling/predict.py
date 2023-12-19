@@ -52,11 +52,16 @@ codes = {'depressed': 0,
  'joyful': 4,
  'over the moon': 5}
 
+### Read data from S3 bucket
+
 data_url = 'https://recommendationspotify.s3.us-east-2.amazonaws.com/clean_songs_en_fr_sp.xlsx'
 data = pd.read_excel(data_url)
 
 original_data_url = 'https://recommendationspotify.s3.us-east-2.amazonaws.com/dataset.xlsx'
 original_data = pd.read_excel(original_data_url)
+
+### Read the files generated on the train.py file
+
 model = pickle.load(open('final_model.sav', 'rb'))
 enc = pickle.load(open('encoder.sav', 'rb'))
 vect = pickle.load(open('vectorizer.sav', 'rb'))
@@ -218,3 +223,6 @@ if __name__ == '__main__':
 
     except:
         print('Language not detected, try again')
+
+#### To execute the file, do it in the terminal in this way: python predict.py "user input".
+#### For example: python predict.py "I am feeling depressed"
